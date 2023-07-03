@@ -13,15 +13,27 @@ class handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type', 'text/plain')
         self.end_headers()
-        country = dic['country']
-        url = "https://restcountries.com/v3.1/all"
-        response = requests.get(url + country)
-        data = response.json()
-        defininitions = []
-        for word_data in data:
-            defininition = word_data['meanings'][0]['definition'][0]['definitions']
-            defininitions.append(defininition)
 
-        message = str(defininitions)
+        country = dic['country']
+        capitol = dic['capitol']
+        url = "https://restcountries.com/v3.1/name"
+        country_response = requests.get(url + country)
+        capitol_response = requests.get(url + capitol)
+
+        country_data = country_response.json()
+        capitol_data = capitol_response.json()
+
+        country_message = country_data[0]['name']['common']
+        output_country = "The capitol of " + country + " is " + capitol
+        capitol_message = capitol_data[0]['name']['common']
+        output_capitol = "The capitol of " + capitol + " is " + country
+
+        
+        
+
+
+
+        capitol_message = str(output_capitol)
+        country_message = str(output_country)
         self.wfile.write(message.encode())
         return
