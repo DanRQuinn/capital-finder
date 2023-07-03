@@ -15,7 +15,7 @@ class handler(BaseHTTPRequestHandler):
         self.end_headers()
 
         country = dic['country']
-        # capitol = dic['capitol']
+        capitol = dic['capitol']
         url = "https://restcountries.com/v3.1/name"
         country_response = requests.get(url + country)
         # capitol_response = requests.get(url + capitol)
