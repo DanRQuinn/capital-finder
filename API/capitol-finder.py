@@ -15,25 +15,25 @@ class handler(BaseHTTPRequestHandler):
         self.end_headers()
 
         country = dic['country']
-        capitol = dic['capitol']
+        # capitol = dic['capitol']
         url = "https://restcountries.com/v3.1/name"
         country_response = requests.get(url + country)
-        capitol_response = requests.get(url + capitol)
+        # capitol_response = requests.get(url + capitol)
 
         country_data = country_response.json()
-        capitol_data = capitol_response.json()
+        # capitol_data = capitol_response.json()
 
         country_message = country_data[0]['name']['common']
         output_country = "The capitol of " + country + " is " + capitol
-        capitol_message = capitol_data[0]['name']['common']
-        output_capitol = "The capitol of " + capitol + " is " + country
+        # capitol_message = capitol_data[0]['name']['common']
+        # output_capitol = "The capitol of " + capitol + " is " + country
 
         
         
 
 
 
-        capitol_message = str(output_capitol)
+        # capitol_message = str(output_capitol)
         country_message = str(output_country)
         self.wfile.write(message.encode())
         return
