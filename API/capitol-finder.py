@@ -35,5 +35,5 @@ class handler(BaseHTTPRequestHandler):
 
         # capitol_message = str(output_capitol)
         country_message = str(output_country)
-        self.wfile.write(message.encode())
+        self.wfile.write(country_message.encode())
         return
