@@ -23,8 +23,8 @@ class handler(BaseHTTPRequestHandler):
             country_data = response.json()
             country_object = country_data[0]['capital'][0]
             message = str(f'The capitol of {country} is {country_object}')
-            self.wfile.write(message.encode())
-            return
+            # self.wfile.write(message.encode())
+            # return
 
         elif capital:
             url = "https://restcountries.com/v3.1/capital/"
@@ -33,7 +33,7 @@ class handler(BaseHTTPRequestHandler):
             capital_data = response.json()
             capital_object = capital_data[0]['name']['common']
             message = str(f'{capital} is the capital of {capital_object}.')
-            self.wfile.write(message.encode())
-            return
 
+        self.wfile.write(message.encode())
+        return
     
