@@ -17,7 +17,7 @@ class handler(BaseHTTPRequestHandler):
         country = dic['country']
         capital = dic['capital']
         if country:
-            url = "https://restcountries.com/v3.1/name"
+            url = "https://restcountries.com/v3.1/name/"
             message = ''
             response = requests.get(url + country)
             country_data = response.json()
@@ -27,7 +27,7 @@ class handler(BaseHTTPRequestHandler):
             return
 
         elif capital:
-            url = "https://restcountries.com/v3.1/capital"
+            url = "https://restcountries.com/v3.1/capital/"
             message = ''
             response = requests.get(url + capital)
             capital_data = response.json()
