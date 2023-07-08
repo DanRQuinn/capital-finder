@@ -10,7 +10,12 @@ Api that takes in a capital city and returns the country it is in. It also takes
 
 ## Deployment Url
 
-https://serverless-git-main-danrquinn.vercel.app/api/capital-finder?{country/capital}={name}
+(https://serverless-git-main-danrquinn.vercel.app/api/capital-finder?{country/capital}={name})
 
+### find capital of peru:
 
+[search peru](https://serverless-git-main-danrquinn.vercel.app/api/capital-finder?country=peru)
 
+### find country of Lima:
+
+[search lima](https://serverless-git-main-danrquinn.vercel.app/api/capital-finder?capital=lima)
